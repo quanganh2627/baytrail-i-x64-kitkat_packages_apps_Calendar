@@ -421,11 +421,7 @@ public class AsyncQueryService extends Handler {
                 break;
 
             case Operation.EVENT_ARG_DELETE:
-                if (null != info.result) {
-                    onDeleteComplete(token, info.cookie, (Integer) info.result);
-                } else {
-                    Log.w(TAG, "Delete opetion failed!");
-                }
+                onDeleteComplete(token, info.cookie, (Integer) info.result);
                 break;
 
             case Operation.EVENT_ARG_BATCH:

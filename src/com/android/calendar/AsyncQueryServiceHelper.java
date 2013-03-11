@@ -312,14 +312,7 @@ public class AsyncQueryServiceHelper extends IntentService {
                     break;
 
                 case Operation.EVENT_ARG_DELETE:
-                    try {
-                        args.result = resolver.delete(args.uri, args.selection, args.selectionArgs);
-                    } catch (IllegalArgumentException e) {
-                        Log.w(TAG, "Found a problematic uri,the target event may be deleted from the db.");
-                        Log.w(TAG, e.toString());
-                        args.result = null;
-                    }
-
+                    args.result = resolver.delete(args.uri, args.selection, args.selectionArgs);
                     break;
 
                 case Operation.EVENT_ARG_BATCH:
